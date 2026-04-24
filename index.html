@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Login Section -->
+    <div id="loginSection" class="login-container">
+        <div class="login-box">
+            <h1>Forms Management System</h1>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-login">Sign In</button>
+            </form>
+            <p id="loginError" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Section -->
+    <div id="adminSection" class="admin-container" style="display: none;">
+        <header class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </header>
+
+        <main class="admin-main">
+            <!-- Division Selection -->
+            <div class="division-selection">
+                <h2>Select Division</h2>
+                <div class="division-buttons">
+                    <button class="division-btn" data-division="maxmus">Maxmus</button>
+                    <button class="division-btn" data-division="nucles">Nucles</button>
+                    <button class="division-btn" data-division="gladius">Gladius</button>
+                    <button class="division-btn" data-division="stimulas">Stimulas</button>
+                    <button class="division-btn" data-division="glamus">Glamus</button>
+                    <button class="division-btn" data-division="nutrius">Nutrius</button>
+                </div>
+            </div>
+
+            <!-- Selected Division Management -->
+            <div id="divisionManagement" class="division-management" style="display: none;">
+                <h2 id="selectedDivisionTitle">Division Forms</h2>
+
+                <!-- Add Form Section -->
+                <div class="add-form-section">
+                    <h3>Add New Form</h3>
+                    <div class="input-group">
+                        <label for="formName">Form Name</label>
+                        <input type="text" id="formName" placeholder="Enter form name">
+                    </div>
+                    <div class="input-group">
+                        <label for="formLink">Form Link</label>
+                        <input type="url" id="formLink" placeholder="Enter form URL">
+                    </div>
+                    <div class="form-buttons">
+                        <button id="uploadBtn" class="btn-upload">Upload Form</button>
+                        <button id="cancelBtn" class="btn-cancel" style="display: none;"
+                            onclick="cancelEdit()">Cancel</button>
+                    </div>
+                </div>
+
+                <!-- Forms List Section -->
+                <div class="forms-list-section">
+                    <h3>Existing Forms</h3>
+                    <div id="formsList" class="forms-list">
+                        <!-- Forms will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
